@@ -1,0 +1,2 @@
+SELECT count(id) FROM aspirinjson WHERE orgId = 1.
+Максимов Михайло Сергійович.

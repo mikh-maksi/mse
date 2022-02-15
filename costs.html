@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>.productCost{
+        border:1px dotted gray;
+        display: inline-block;
+    }</style>
+</head>
+<body>
+    <h2>Продукт</h2>
+    <section class = "productCost">
+        <div><label for="vcosts">Переменные издержки</label><input type="text" name = "vcosts" value = "150"><span>Кофе-брейк</span></div>
+        <div><label for="fcosts">Постоянные издержки</label><input type="text" name = "fcosts" value = "4800"><span>КХМ+Препод</span></div>
+        <div><label for="price">Цена</label><input type="text" name = "price" value = "2500"></div>
+        <div><button id = "countBreakPoint">Расчет точки безубыточности</button></div>
+        <div><label for="breakEven">Точка безубыточности</label><input type="text" name = "breakEven"></div>
+    </section>
+        <div><label for="normativeNumber">Нормативное Количество </label><input type="text" name = "normativeNumber" value="12"></div>
+        <div><label for="normativeIncome">Нормативный доход</label><input type="text" name = "normativeIncome" value="12"></div>
+        <div><label for="normativeProfit">Нормативная прибыль</label><input type="text" name = "normativeProfit" value="12"></div>
+        <div><button id = "countNorm">Расчет Нормативных показателей</button></div>
+        <div><button id = "seveProduct">Сохранить продукт</button></div>
+        
+
+    <script>
+        countBreakPoint.addEventListener("click",BreakPoint);
+        countNorm.addEventListener("click",countNormFnc)
+        function BreakPoint(){
+            let vc = Number(document.getElementsByName("vcosts")[0].value);
+            let fc = Number(document.getElementsByName("fcosts")[0].value);
+            let pr = Number(document.getElementsByName("price")[0].value);
+            let brkEvn = fc/(pr-vc);
+            document.getElementsByName("breakEven")[0].value=brkEvn;
+        }
+        function countNormFnc(){
+            console.log("ok");
+            let vc = Number(document.getElementsByName("vcosts")[0].value);
+            let fc = Number(document.getElementsByName("fcosts")[0].value);
+            let pr = Number(document.getElementsByName("price")[0].value);
+            let nn = Number(document.getElementsByName("normativeNumber")[0].value);
+            let brkEvn = Number(document.getElementsByName("breakEven")[0].value);
+            
+            document.getElementsByName("normativeIncome")[0].value = pr*nn;
+            document.getElementsByName("normativeProfit")[0].value = ((pr-vc)*nn)-fc;
+
+        }
+
+    </script>
+</body>
+</html>

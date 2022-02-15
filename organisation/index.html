@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="hide" id="usrCheck">
+        <h2>Анализ</h2>
+        <ul class="list">
+            <li><button id="an1">Не понятно</button></li>
+            <li><button id="an2">Продумано</button></li>
+            <li><button id="an3">Прописано</button></li>
+            <li><button id="an4">По методикам</button></li>
+            <li><button id="an5">Автоматизировано</button></li>
+        </ul>
+    </div>
+    <script>
+        an1.addEventListener("click", chkBtn);
+        an2.addEventListener("click", chkBtn);
+        an3.addEventListener("click", chkBtn);
+        an4.addEventListener("click", chkBtn);
+        an5.addEventListener("click", chkBtn);
+
+        function chkBtn(event) {
+            console.log(event.target.id);
+            an1.classList = "";
+            an2.classList = "";
+            an3.classList = "";
+            an4.classList = "";
+            an5.classList = "";
+            if (event.target.id == "an1") {
+                an1.classList = "green";
+            }
+            if (event.target.id == "an2") {
+                an2.classList = "green";
+            }
+            if (event.target.id == "an3") {
+                an3.classList = "green";
+            }
+            if (event.target.id == "an4") {
+                an4.classList = "green";
+            }
+            if (event.target.id == "an5") {
+                an5.classList = "green";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

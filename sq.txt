@@ -1,0 +1,1 @@
+INSERT INTO aspirin (ordId,a,s,p,r,n) VALUES (1,5,5,3,3,3);
